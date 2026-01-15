@@ -4,6 +4,11 @@ const log = require("./config.json");
 
 const server = http.createServer((req, res) => {
 
+  if (req.url === '/logs') {
+     res.writeHead(200, { 'Content-Type': 'text/plain' });
+     let logs = logger.View(); 
+     res.end(logs);
+  }else{
     let body = '';
     req.on('data', (chunk) => {
         body += chunk;
@@ -12,20 +17,10 @@ const server = http.createServer((req, res) => {
         logger.Log(`${new Date()}\r\n${req.method} ${req.url}\r\nHeaders:\r\n${JSON.stringify(req.headers)}\r\n${body}\r\n\r\n`);
         res.end('OK'); 
     });
-  // Routing
-//   if (req.url === '/') {
-//     res.writeHead(200, { 'Content-Type': 'text/plain' });
-//     res.end("OK");
-//   } else if (req.url === '/about') {
-//     res.writeHead(200, { 'Content-Type': 'text/plain' });
-//     res.end('About page');
-//   } else {
-//     res.writeHead(404, { 'Content-Type': 'text/plain' });
-//     res.end('Page not found');
-//   }
+  }
 });
 
 
 server.listen(log.port, () => {
-  console.log(`Server listening on port ${log.port}`);
+  console.log(`Http capture app listening on port ${log.port}`);
 });

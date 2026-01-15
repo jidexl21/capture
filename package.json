@@ -1,0 +1,20 @@
+{
+  "name": "capture",
+  "version": "1.0.0",
+  "description": "log and read",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jidexl21/capture.git"
+  },
+  "author": "jidexl21",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jidexl21/capture/issues"
+  },
+  "homepage": "https://github.com/jidexl21/capture#readme"
+}
