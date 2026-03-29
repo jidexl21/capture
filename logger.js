@@ -1,6 +1,6 @@
 const fs = require('fs');
 const log = require("./config.json");
-var logFile = process.env.WEBHOOK_LOG ?? log.logFile; 
+var logFile = process.env.WEBHOOK_LOG | log.logFile; 
 const Log = (data) =>{
    // console.log(data)
     fs.appendFileSync(logFile, data);
