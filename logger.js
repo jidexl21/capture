@@ -7,6 +7,6 @@ const Log = (data) =>{
     fs.appendFileSync(logFile, data);
 }
 const View = ()=>{
-    return fs.readFileSync(log.logfile, {encoding: "utf-8"});
+    return fs.readFileSync(logFile, {encoding: "utf-8"});
 }
 module.exports = {Log, View}
